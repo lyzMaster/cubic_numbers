@@ -11,8 +11,9 @@ int main(){
         cin>>diff[i];
     }
     for (int i = 1; i<=10000; i++) {
-        //all_cubic[i] = pow(i,3); (on mac,the function is okay and 'i' can be a int number.but it is error when I run it on school's computer using MinGW.)
-		all_cubic[i] = i*i*i;
+        all_cubic[i] = pow(i,3);
+        //on mac,the function is okay and 'i' can be a int number.but it is error when I run it on school's computer using MinGW.
+        //I try i*i*i,but the answer is wrong(348913653).I also try i*i*i*1LL,but it also outputs '348913653'.I don't know why.
     }
     for (int i = 1; i<=10000; i++) {
         for (int j = 1; j<=10000; j++) {
@@ -20,7 +21,7 @@ int main(){
         }
     }
     for (int c = 1; c<=n; c++) {
-		flag = false;
+        flag = false;
         for (int i = 1; i<=10000; i++) {
             if (flag==true) {
                 break;
@@ -29,13 +30,13 @@ int main(){
                 if (diff[c] == new_diff[i][j]) {
                     flag = true;
                     cout<<"YES"<<endl;
-					break;
+                    break;
                 }
             }
         }
-		if(flag == false){
-			cout<<"NO"<<endl;
-		}
+        if(flag == false){
+            cout<<"NO"<<endl;
+        }
     }
     return 0;
 }
