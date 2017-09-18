@@ -11,7 +11,8 @@ int main(){
         cin>>diff[i];
     }
     for (int i = 1; i<=10000; i++) {
-        all_cubic[i] = pow(i,3);
+        //all_cubic[i] = pow(i,3); (on mac,the function is okay and 'i' can be a int number.but it is error when I run it on school's computer using MinGW.)
+		all_cubic[i] = i*i*i;
     }
     for (int i = 1; i<=10000; i++) {
         for (int j = 1; j<=10000; j++) {
@@ -19,21 +20,22 @@ int main(){
         }
     }
     for (int c = 1; c<=n; c++) {
+		flag = false;
         for (int i = 1; i<=10000; i++) {
-            if (flag==true && c!=n) {
-                flag = false;
+            if (flag==true) {
                 break;
             }
             for (int j = 1; j<=10000; j++) {
                 if (diff[c] == new_diff[i][j]) {
                     flag = true;
                     cout<<"YES"<<endl;
+					break;
                 }
             }
         }
-        if (flag == false) {
-            cout<<"NO"<<endl;
-        }
+		if(flag == false){
+			cout<<"NO"<<endl;
+		}
     }
     return 0;
 }
