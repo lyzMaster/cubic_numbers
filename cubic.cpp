@@ -40,3 +40,24 @@ int main(){
     }
     return 0;
 }
+
+
+
+
+
+
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+long long input_diff[101];
+int main(){
+	int x;
+	cin>>x;
+	for(int i = 1;i<=x;i++){
+		cin>>input_diff[i];
+	}
+	for(long long i=1;i<=1000000;i++){
+		
+	}
+}
